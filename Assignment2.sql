@@ -35,10 +35,16 @@
 
 -- 3. How many employees were working for the dept. number ‘d007’ between 1985-01-01 and 1991-03-07? 
 		-- Show the SQL script along with the answer.
+        
+        -- REVISED question on 0221209 - Question 3: How many employees were working for the company between the given dates 
+			-- these are the employees who continuously served the company within that period of time. 
+			-- That is, none of them started or ended in the middle of that time period. 
+			-- Consider from_date and to_date to identify this range. 
+			-- Consider using 1986-01-01 instead of 1985-01-01.
 
 				SELECT dept_no , COUNT(emp_no) AS empCOUNT
 				FROM dept_emp 
-				WHERE from_date > '1985-01-01' AND to_date < '1991-03-07' AND dept_no = 'd007';
+				WHERE from_date >= '1986-01-01' AND to_date <= '1991-03-07' AND dept_no = 'd007';
 
 
 -- ------------------------------------------------------------------------------------------------------------------------------------------------------------
